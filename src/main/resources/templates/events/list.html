@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>이벤트 목록</h1>
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>참가 인원</th>
+            <th>시작</th>
+            <th>종료</th>
+        </tr>
+        <tr th:each="event: ${events}">
+            <td th:text="${event.name}">이벤트 이름</td>
+            <td th:text="${event.limitOfEnrollment}">100</td>
+            <td th:text="${#temporals.format(event.startDateTime, 'yyyy-MM-dd HH:mm aa', #locale.ENGLISH)}">2020-01-10 AM 10:00</td>
+            <td th:text="${#temporals.format(event.endDateTime, 'yyyy-MM-dd HH:mm aa', #locale.ENGLISH)}">2020-01-10 PM 10:00</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+<!--
+1. <html lang="en" xmlns:th="https://www.thyleaf.org">
+타임리프를 사용하려면 먼저 네임 스페이스를 추가해야 한다.
+xmlns -> xml namespace
+xmlns:th -> th라는 namespace를 정의하겠다
+xmlns:th="https://www.thyleaf.org" -> th라는 namespace는 다음의 위치에 정의돼있다
+여기 있는 네임스페이스를 사용해서 코딩을 하겠다는 설정
+-->
