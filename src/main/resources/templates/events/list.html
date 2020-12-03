@@ -16,8 +16,8 @@
         <tr th:each="event: ${events}">
             <td th:text="${event.name}">이벤트 이름</td>
             <td th:text="${event.limitOfEnrollment}">100</td>
-            <td th:text="${#temporals.format(event.startDateTime, 'yyyy-MM-dd HH:mm aa', #locale.ENGLISH)}">2020-01-10 AM 10:00</td>
-            <td th:text="${#temporals.format(event.endDateTime, 'yyyy-MM-dd HH:mm aa', #locale.ENGLISH)}">2020-01-10 PM 10:00</td>
+            <td th:text="${#temporals.format(event.startDateTime, 'yyyy-MM-dd HH:mm a', #locale.ENGLISH)}">2020-01-10 AM 10:00</td>
+            <td th:text="${#temporals.format(event.endDateTime, 'yyyy-MM-dd HH:mm a', #locale.ENGLISH)}">2020-01-10 PM 10:00</td>
         </tr>
     </table>
 </body>
